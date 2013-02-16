@@ -1,0 +1,48 @@
+--- iperf-3.0b4/src/iperf_api.c~	2010-08-03 01:15:27.000000000 +0200
++++ iperf-3.0b4/src/iperf_api.c	2013-02-16 22:53:05.882124239 +0100
+@@ -48,15 +48,15 @@
+ void
+ usage()
+ {
+-    fprintf(stderr, usage_short);
++    fprintf(stderr, "%s", usage_short);
+ }
+ 
+ 
+ void
+ usage_long()
+ {
+-    fprintf(stderr, usage_long1);
+-    fprintf(stderr, usage_long2);
++    fprintf(stderr, "%s", usage_long1);
++    fprintf(stderr, "%s", usage_long2);
+ }
+ 
+ 
+@@ -347,7 +347,7 @@
+                 test->reverse = 1;
+                 break;
+             case 'v':
+-                printf(version);
++                printf("%s", version);
+                 exit(0);
+             case 'h':
+             default:
+@@ -1163,7 +1163,7 @@
+         case DISPLAY_RESULTS:
+             /* print final summary for all intervals */
+ 
+-            printf(report_bw_header);
++            printf("%s", report_bw_header);
+ 
+             start_time = 0.;
+             sp = SLIST_FIRST(&test->streams);
+@@ -1256,7 +1256,7 @@
+         return;
+     }
+     if (sp == SLIST_FIRST(&test->streams)) {
+-        printf(report_bw_header);
++        printf("%s", report_bw_header);
+     }
+ 
+     unit_snprintf(ubuf, UNIT_LEN, (double) (ir->bytes_transferred), 'A');

@@ -11,6 +11,7 @@ License:	BSD-like
 Group:		Networking/Utilities
 Source0:	http://iperf.googlecode.com/files/iperf-%{version}b4.tar.gz
 # Source0-md5:	fde024a200b064b54accd1959f7e642e
+Patch0:		%{name}-Werror.patch
 URL:		http://code.google.com/p/iperf/
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -28,6 +29,7 @@ with iperf2.
 
 %prep
 %setup -q -n %{orgname}-%{version}%{beta}
+%patch0 -p1
 
 %build
 %configure
