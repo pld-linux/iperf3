@@ -1,0 +1,11 @@
+--- iperf-3.0b4/src/Makefile.am~	2010-07-24 01:48:45.000000000 +0200
++++ iperf-3.0b4/src/Makefile.am	2013-02-18 11:38:48.337412987 +0100
+@@ -51,7 +51,7 @@
+ iperf3_profile_SOURCES  = main.c \
+ 						  $(libiperf_a_SOURCES)
+ 
+-iperf3_profile_CFLAGS   = -pg -Wall
++iperf3_profile_CFLAGS   = -Wall
+ iperf3_profile_LDADD    = libiperf.a
+ 
+ # Linux installs require the uuid library explicitly linked in
