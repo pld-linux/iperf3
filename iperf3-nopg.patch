@@ -4,8 +4,8 @@
  iperf3_profile_SOURCES  = main.c \
  						  $(libiperf_la_SOURCES)
  
--iperf3_profile_CFLAGS   = -pg -g -Wall
-+iperf3_profile_CFLAGS   = -g -Wall
+-iperf3_profile_CFLAGS   = -pg -g
++iperf3_profile_CFLAGS   = -g
  iperf3_profile_LDADD    = libiperf.la
 -iperf3_profile_LDFLAGS  = -pg -g
 +iperf3_profile_LDFLAGS  = -g

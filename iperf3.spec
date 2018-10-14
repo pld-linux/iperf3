@@ -4,14 +4,14 @@
 Summary:	Network performance measurement tool
 Summary(pl.UTF-8):	Narzędzie do szacowania wydajności sieci
 Name:		iperf3
-Version:	3.0.3
+Version:	3.6
 Release:	1
 License:	BSD-like
 Group:		Networking/Utilities
-Source0:	http://stats.es.net/software/iperf-%{version}.tar.gz
-# Source0-md5:	dc5f0a7e2b3007ee3203055f000637bb
+Source0:	https://downloads.es.net/pub/iperf/%{orgname}-%{version}.tar.gz
+# Source0-md5:	6114c34ef6c3a69bc75de12e5366789b
 Patch0:		%{name}-nopg.patch
-URL:		http://code.google.com/p/iperf/
+URL:		https://software.es.net/iperf/
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -75,9 +75,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS README.md RELEASE_NOTES
+%doc INSTALL LICENSE README.md RELEASE_NOTES docs/
 %attr(755,root,root) %{_bindir}/iperf3
-%{_mandir}/man1/*
+%{_mandir}/man1/iperf3.1*
 
 %files libs
 %defattr(644,root,root,755)
@@ -88,4 +88,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libiperf.so
 %{_includedir}/iperf_api.h
-%{_mandir}/man3/*.3*
+%{_mandir}/man3/libiperf.3*
