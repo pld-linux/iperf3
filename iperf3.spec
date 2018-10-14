@@ -28,8 +28,8 @@ with iperf2.
 
 %package libs
 Summary:	Shared iperf3 libraries
-Summary(pl.UTF-8):      Biblioteki współdzielone iperf3
-Group:          Libraries
+Summary(pl.UTF-8):	Biblioteki współdzielone iperf3
+Group:		Libraries
 
 %description libs
 Shared iperf3 libraries.
@@ -38,10 +38,10 @@ Shared iperf3 libraries.
 Biblioteki współdzielone iperf3.
 
 %package devel
-Summary:        Header files for iperf3 libraries
-Summary(pl.UTF-8):      Pliki nagłówkowe bibliotek iperf3
-Group:          Development/Libraries
-Requires:       %{name}-libs = %{epoch}:%{version}-%{release}
+Summary:	Header files for iperf3 libraries
+Summary(pl.UTF-8):	Pliki nagłówkowe bibliotek iperf3
+Group:		Development/Libraries
+Requires:	%{name}-libs = %{epoch}:%{version}-%{release}
 
 %description devel
 Header files for iperf3 libraries.
