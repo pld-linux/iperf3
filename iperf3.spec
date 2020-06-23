@@ -4,12 +4,12 @@
 Summary:	Network performance measurement tool
 Summary(pl.UTF-8):	Narzędzie do szacowania wydajności sieci
 Name:		iperf3
-Version:	3.6
+Version:	3.8
 Release:	1
 License:	BSD-like
 Group:		Networking/Utilities
 Source0:	https://downloads.es.net/pub/iperf/%{orgname}-%{version}.tar.gz
-# Source0-md5:	6114c34ef6c3a69bc75de12e5366789b
+# Source0-md5:	7164f877241dce479f6e8f083e5c447d
 Patch0:		%{name}-nopg.patch
 URL:		https://software.es.net/iperf/
 BuildRequires:	libstdc++-devel
@@ -58,7 +58,9 @@ Pliki nagłówkowe bibliotek iperf3.
 %{__aclocal}
 %{__autoconf}
 %{__automake}
-%configure
+%configure \
+	--enable-profiling \
+	--enable-shared
 %{__make}
 
 %install
@@ -75,7 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc INSTALL LICENSE README.md RELEASE_NOTES docs/
+%doc INSTALL LICENSE README.md RELNOTES.md docs/
 %attr(755,root,root) %{_bindir}/iperf3
 %{_mandir}/man1/iperf3.1*
 
