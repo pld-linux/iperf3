@@ -10,7 +10,6 @@ License:	BSD-like
 Group:		Networking/Utilities
 Source0:	https://downloads.es.net/pub/iperf/%{orgname}-%{version}.tar.gz
 # Source0-md5:	7164f877241dce479f6e8f083e5c447d
-Patch0:		%{name}-nopg.patch
 URL:		https://software.es.net/iperf/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -56,7 +55,6 @@ Pliki nagłówkowe bibliotek iperf3.
 
 %prep
 %setup -q -n %{orgname}-%{version}
-%patch0 -p1
 
 %build
 %{__libtoolize}
@@ -64,7 +62,6 @@ Pliki nagłówkowe bibliotek iperf3.
 %{__autoconf}
 %{__automake}
 %configure \
-	--enable-profiling \
 	--enable-shared \
 	--disable-silent-rules
 %{__make}
