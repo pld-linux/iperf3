@@ -12,7 +12,12 @@ Source0:	https://downloads.es.net/pub/iperf/%{orgname}-%{version}.tar.gz
 # Source0-md5:	7164f877241dce479f6e8f083e5c447d
 Patch0:		%{name}-nopg.patch
 URL:		https://software.es.net/iperf/
-BuildRequires:	libstdc++-devel
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libsctp-devel
+BuildRequires:	libtool
+BuildRequires:	linux-libc-headers >= 7:3.13
+BuildRequires:	openssl-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
