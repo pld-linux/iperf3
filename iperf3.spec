@@ -65,7 +65,8 @@ Pliki nagłówkowe bibliotek iperf3.
 %{__automake}
 %configure \
 	--enable-profiling \
-	--enable-shared
+	--enable-shared \
+	--disable-silent-rules
 %{__make}
 
 %install
