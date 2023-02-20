@@ -4,12 +4,12 @@
 Summary:	Network performance measurement tool
 Summary(pl.UTF-8):	Narzędzie do szacowania wydajności sieci
 Name:		iperf3
-Version:	3.12
+Version:	3.13
 Release:	1
 License:	BSD-like
 Group:		Networking/Utilities
 Source0:	https://downloads.es.net/pub/iperf/%{orgname}-%{version}.tar.gz
-# Source0-md5:	09d500af77459b4e12951b7652912594
+# Source0-md5:	db37b3c0183a5bc066a3e996229f97ec
 URL:		https://software.es.net/iperf/
 BuildRequires:	autoconf >= 2.71
 BuildRequires:	automake
