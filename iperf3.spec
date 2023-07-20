@@ -5,7 +5,7 @@ Summary:	Network performance measurement tool
 Summary(pl.UTF-8):	Narzędzie do szacowania wydajności sieci
 Name:		iperf3
 Version:	3.14
-Release:	1
+Release:	2
 License:	BSD-like
 Group:		Networking/Utilities
 Source0:	https://downloads.es.net/pub/iperf/%{orgname}-%{version}.tar.gz
@@ -17,6 +17,7 @@ BuildRequires:	libsctp-devel
 BuildRequires:	libtool
 BuildRequires:	linux-libc-headers >= 7:3.13
 BuildRequires:	openssl-devel
+Requires:	%{name}-libs = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
