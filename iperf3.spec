@@ -46,7 +46,7 @@ Biblioteki współdzielone iperf3.
 Summary:	Header files for iperf3 libraries
 Summary(pl.UTF-8):	Pliki nagłówkowe bibliotek iperf3
 Group:		Development/Libraries
-Requires:	%{name}-libs = %{epoch}:%{version}-%{release}
+Requires:	%{name}-libs = %{version}-%{release}
 
 %description devel
 Header files for iperf3 libraries.
