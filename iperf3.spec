@@ -4,19 +4,24 @@
 Summary:	Network performance measurement tool
 Summary(pl.UTF-8):	Narzędzie do szacowania wydajności sieci
 Name:		iperf3
-Version:	3.15
+Version:	3.16
 Release:	1
 License:	BSD-like
 Group:		Networking/Utilities
 Source0:	https://downloads.es.net/pub/iperf/%{orgname}-%{version}.tar.gz
-# Source0-md5:	63d4ceef1768c13af563ce92cfdd41fa
+# Source0-md5:	cbcdeae143cbd82a1f41a80ed01ede6c
+Patch0:		link-libatomic.patch
 URL:		https://software.es.net/iperf/
 BuildRequires:	autoconf >= 2.71
 BuildRequires:	automake
+%ifnarch %arch_with_atomics64
+BuildRequires:	libatomic-devel
+%endif
 BuildRequires:	libsctp-devel
 BuildRequires:	libtool
 BuildRequires:	linux-libc-headers >= 7:3.13
 BuildRequires:	openssl-devel
+BuildRequires:	rpmbuild(macros) >= 2.025
 Requires:	%{name}-libs = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -56,6 +61,7 @@ Pliki nagłówkowe bibliotek iperf3.
 
 %prep
 %setup -q -n %{orgname}-%{version}
+%patch0 -p1
 
 %build
 %{__libtoolize}
