@@ -13,6 +13,7 @@ Source0:	https://downloads.es.net/pub/iperf/%{orgname}-%{version}.tar.gz
 URL:		https://software.es.net/iperf/
 BuildRequires:	autoconf >= 2.71
 BuildRequires:	automake
+BuildRequires:	glibc-headers >= 6:2.32
 %ifnarch %arch_with_atomics64
 BuildRequires:	libatomic-devel
 %endif
